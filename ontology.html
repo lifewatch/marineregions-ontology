@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Marine Regions Ontology</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        a {
+            color: #002c5f;
+            text-decoration: none;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #268bd2;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid#268bd2;
+            padding:5px;
+            font-size: 1.1em;
+        }
+
+        ul.hierarchy {
+            border: 1px solid #268bd2;
+            padding: 5px 25px 5px 25px;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 2em;
+        }
+
+        .entity {
+            border: 1px solid #268bd2;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity p {
+            margin: 0px;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 0.75em;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        .entity .uri {
+            font-size:large;
+            font-family: monospace;
+            color:#586e75;
+        }
+
+        td a {
+            font-size:large;
+            font-family: monospace;
+            color:#586e75;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #002c5f; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #002b36; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:#cb4b16;
+        }
+
+        .sup-op {
+            color:#657b83;
+        }
+
+        .sup-fp {
+            color:#839496;
+        }
+
+        .sup-dp {
+            color:#859900;
+        }
+
+        .sup-ap {
+            color:#dc322f;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:#cb4b16;
+        }
+
+        .sup-cl {
+            color: #dc322f;
+        }
+
+        code {
+            font-size: large;
+            color:#586e75;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "http://marineregions.org/ns/ontology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>The Marine Regions ontology provides definitions for the classes and properties used in the <a href=\"//marineregions.org\">Marine Regions</a> dataset.</p>"
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "The Marine Regions Ontology"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.6</span>
+  </div>
+  <div id="content">
+    <h1>The Marine Regions Ontology</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>http://marineregions.org/ns/ontology</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher">Publisher</a>(s)</dt>
+        <dd>
+            
+    <a href="https://www.vliz.be/">Flanders Marine Institute</a><br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    <a href="https://www.marineregions.org/editors.php">Marine Regions Data Management team</a>
+    (<a href="mailto:info@marineregions.org">info@marineregions.org</a>)<br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor">Contributor</a>(s)</dt>
+        <dd>
+            
+    <a href="https://orcid.org/0000-0001-8272-0754">Harm Delva</a>
+    <a href="https://orcid.org/0000-0001-8272-0754"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></a>
+    (<a href="mailto:harm.delva@ugent.be">harm.delva@ugent.be</a>)<br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
+        <dd>2021-03-17</dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/issued">Issued</a></dt>
+        <dd>2021-03-12</dd>
+        <dt>License</dt>
+        <dd><a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="ontology.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>The Marine Regions ontology provides definitions for the classes and properties used in the <a href="//marineregions.org">Marine Regions</a> dataset.</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+    <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Feature">Feature</a></li>
+        <li><a href="#MarineRegionsGeoObject">Marine Regions Geo Object</a></li>
+    </ul>
+    <div class="entity class" id="Feature">
+        <h3>Feature<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#Feature</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A named spatial spatial region or location.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/Location">dcterms:Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#MarineRegionsGeoObject">mr:MRGeoObject</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Hasgeometry">mr:hasGeometry</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#MarineRegionsGeographicIdentifier(MRGID)">mr:mrgid</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MarineRegionsGeoObject">
+        <h3>Marine Regions Geo Object<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#MRGeoObject</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A feature described in the Marine Regions database, uniquely identified by its Marine Regions Geographic Identifier (MRGID).</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Feature">mr:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a> <span class="cardinality">value</span> <a href="http://marineregions.org">http://marineregions.org</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="#MarineRegionsGeographicIdentifier(MRGID)">mr:mrgid</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a> <span class="cardinality">some</span> <a href="http://marineregions.org/ns/place_types#PlaceType">mrtypes:PlaceType</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Contains">Contains</a></li>
+        <li><a href="#Containssourceof">Contains source of</a></li>
+        <li><a href="#Containsstream">Contains stream</a></li>
+        <li><a href="#Flowsinto">Flows into</a></li>
+        <li><a href="#Hasadministrativepart">Has administrative part</a></li>
+        <li><a href="#Hasgeometry">Has geometry</a></li>
+        <li><a href="#Haspreferredalternative">Has preferred alternative</a></li>
+        <li><a href="#Hastributary">Has tributary</a></li>
+        <li><a href="#Influences">Influences</a></li>
+        <li><a href="#Isadjacentto">Is adjacent to</a></li>
+        <li><a href="#Isadministrativepartof">Is administrative part of</a></li>
+        <li><a href="#Isinfluencedby">Is influenced by</a></li>
+        <li><a href="#Ispartof">Is part of</a></li>
+        <li><a href="#Ispartlypartof">Is partly part of</a></li>
+        <li><a href="#Ispreferredalternativeof">Is preferred alternative of</a></li>
+        <li><a href="#Isrelatedto">Is related to</a></li>
+        <li><a href="#Isreplacedby">Is replaced by</a></li>
+        <li><a href="#Partlycontains">Partly contains</a></li>
+        <li><a href="#Replaces">Replaces</a></li>
+        <li><a href="#Rises">Rises</a></li>
+        <li><a href="#Streamsthrough">Streams through</a></li>
+    </ul>
+    <div class="entity property" id="Contains">
+        <h3>Contains<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#contains</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#narrower">skos:narrower</a>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Ispartof">mr:isPartOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Containssourceof">
+        <h3>Contains source of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#containsSourceOf</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Rises">mr:rises</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Containsstream">
+        <h3>Contains stream<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#containsStream</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Streamsthrough">mr:streamsThrough</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Flowsinto">
+        <h3>Flows into<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#flowsInto</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Hastributary">mr:hasTributary</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Hasadministrativepart">
+        <h3>Has administrative part<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#hasAdministrativePart</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#narrower">skos:narrower</a>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="http://marineregions.org/ns/ontology#isAdmnistrativePartOf">mr:isAdmnistrativePartOf</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Hasgeometry">
+        <h3>Has geometry<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#hasGeometry</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Based on the ISA Programme's Location Core Vocabulary, with the range restricted to Simple Features objects.
+Multiple geometries may be provided, in which case every geometry is considered to be independent from each other.
+As independent geometries, they can be visualized on top of each other, or they can be merged into one GeometryCollection.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/ns/locn#geometry">http://www.w3.org/ns/locn#geometry</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Feature">mr:Feature</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/sf#Geometry">http://www.opengis.net/ont/sf#Geometry</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Haspreferredalternative">
+        <h3>Has preferred alternative<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#hasPreferredAlternative</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    There is another, preferred, alternative for this feature.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Ispreferredalternativeof">mr:isPreferredAlternativeOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Hastributary">
+        <h3>Has tributary<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#hasTributary</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Flowsinto">mr:flowsInto</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Influences">
+        <h3>Influences<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#influences</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates that one feature influences another. For example, a drift is influenced by a water mass or current. This water mass or current determines the sedimentation, erosion and movements of these sediments.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Isinfluencedby">mr:isInfluencedBy</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Isadjacentto">
+        <h3>Is adjacent to<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#isAdjacentTo</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#related">skos:related</a>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Isadministrativepartof">
+        <h3>Is administrative part of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#isAdministrativePartOf</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://www.w3.org/2004/02/skos/core#broader">skos:broader</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Hasadministrativepart">mr:hasAdministrativePart</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Isinfluencedby">
+        <h3>Is influenced by<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#isInfluencedBy</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="http://marineregions.org/ns/ontology#influenced">mr:influenced</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Ispartof">
+        <h3>Is part of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#isPartOf</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://www.w3.org/2004/02/skos/core#broader">skos:broader</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Ispartlypartof">
+        <h3>Is partly part of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#isPartlyPartOf</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://www.w3.org/2004/02/skos/core#broader">skos:broader</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Partlycontains">mr:partlyContains</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Ispreferredalternativeof">
+        <h3>Is preferred alternative of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#isPreferredAlternativeOf</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Haspreferredalternative">mr:hasPreferredAlternative</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Isrelatedto">
+        <h3>Is related to<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#isRelatedTo</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates that two features are semantically related to each other. Subproperties can make this more concrete.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#semanticRelation">skos:semanticRelation</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Feature">mr:Feature</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Feature">mr:Feature</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Isreplacedby">
+        <h3>Is replaced by<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#isReplacedBy</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="http://marineregions.org/ns/ontology#replaced">mr:replaced</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Partlycontains">
+        <h3>Partly contains<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#partlyContains</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#narrower">skos:narrower</a>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Ispartlypartof">mr:isPartlyPartOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Replaces">
+        <h3>Replaces<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#replaces</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates that this feature is deprecated in favor of another.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Isreplacedby">mr:isReplacedBy</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Rises">
+        <h3>Rises<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#rises</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Containssourceof">mr:containsSourceOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Streamsthrough">
+        <h3>Streams through<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#streamsThrough</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Containsstream">mr:containsStream</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#MarineRegionsGeographicIdentifier(MRGID)">Marine Regions Geographic Identifier (MRGID)</a></li>
+    </ul>
+    <div class="entity property" id="MarineRegionsGeographicIdentifier(MRGID)">
+        <h3>Marine Regions Geographic Identifier (MRGID)<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://marineregions.org/ns/ontology#mrgid</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td class="uri">
+                    http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Feature">mr:Feature</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+    
+    <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>mr</dt>
+        <dd><code>http://marineregions.org/ns/ontology#</code></dd>
+        <dt>mrtypes</dt>
+        <dd><code>http://marineregions.org/ns/place_types#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+    <section id="legend">
+        <h2>Legend</h2>
+        <table class="entity">
+            <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+            <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+            <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+            <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+            <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+            <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+            <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+        </table>
+    </section>
+  </div>
+  
+</body>
+</html>
