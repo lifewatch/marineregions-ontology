@@ -396,7 +396,7 @@
     <ul class="hlist">
         <li><a href="#Contains">Contains</a></li>
         <li><a href="#Containssourceof">Contains source of</a></li>
-        <li><a href="#Containsstream">Contains stream</a></li>
+        <li><a href="#Containswatercourse">Contains watercourse</a></li>
         <li><a href="#Flowsinto">Flows into</a></li>
         <li><a href="#Hasadministrativepart">Has administrative part</a></li>
         <li><a href="#Hasgeometry">Has geometry</a></li>
@@ -413,8 +413,8 @@
         <li><a href="#Isreplacedby">Is replaced by</a></li>
         <li><a href="#Partlycontains">Partly contains</a></li>
         <li><a href="#Replaces">Replaces</a></li>
-        <li><a href="#Rises">Rises</a></li>
-        <li><a href="#Streamsthrough">Streams through</a></li>
+        <li><a href="#Risesin">Rises in</a></li>
+        <li><a href="#Flowsthrough">Flows through</a></li>
     </ul>
     <div class="entity property" id="Contains">
         <h3>Contains<sup title="object property" class="sup-op">op</sup></h3>
@@ -427,6 +427,14 @@
                 <th>Is Defined By</th>
                 <td class="uri">
                     http://marineregions.org/ns/ontology
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates a parent-child relation between two features that 
+                    (a) share any portion of space (geometrical intersection), or 
+                    (b) have a parent-child relation on a conceptual level (e.g. Belgium contains the Belgian Exclusive Economic Zone, even though there is no geometrical intersection).
                 </td>
             </tr>
             <tr>
@@ -466,17 +474,17 @@
             <tr>
                 <th>Inverse properties</th>
                 <td>
-                    <a href="#Rises">mr:rises</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="#Risesin">mr:risesIn</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
         </table>
     </div>
-    <div class="entity property" id="Containsstream">
-        <h3>Contains stream<sup title="object property" class="sup-op">op</sup></h3>
+    <div class="entity property" id="Containswatercourse">
+        <h3>Contains watercourse<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
-                <td><code>http://marineregions.org/ns/ontology#containsStream</code></td>
+                <td><code>http://marineregions.org/ns/ontology#containsWatercourse</code></td>
             </tr>
             <tr>
                 <th>Is Defined By</th>
@@ -493,7 +501,7 @@
             <tr>
                 <th>Inverse properties</th>
                 <td>
-                    <a href="#Streamsthrough">mr:streamsThrough</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="#Flowsthrough">mr:flowsThrough</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
         </table>
@@ -610,7 +618,7 @@ As independent geometries, they can be visualized on top of each other, or they 
             <tr>
                 <th>Description</th>
                 <td>
-                    There is another, preferred, alternative for this feature.
+                    Unless there is a strong preference for this feature, it is recommended to use the other feature.
                 </td>
             </tr>
             <tr>
@@ -778,6 +786,14 @@ As independent geometries, they can be visualized on top of each other, or they 
                 </td>
             </tr>
             <tr>
+                <th>Description</th>
+                <td>
+                    Indicates a child-parent relation between two features that 
+                    (a) share any portion of space (geometrical intersection), or 
+                    (b) have a child-parent relation on a conceptual level (e.g. the Belgian Exclusive Economic Zone is part of Belgium, even though there is no geometrical intersection).
+                </td>
+            </tr>
+            <tr>
                 <th>Super-properties</th>
                 <td>
                     <a href="#Isrelatedto">mr:isRelatedTo</a><sup class="sup-op" title="object property">op</sup>
@@ -799,6 +815,12 @@ As independent geometries, they can be visualized on top of each other, or they 
                     http://marineregions.org/ns/ontology
                 </td>
             </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates a child-parent relation between two features that share any portion of space (geometrical intersection). The child has this relation with at least one other parent. 
+                </td>
+            </tr>            
             <tr>
                 <th>Super-properties</th>
                 <td>
@@ -921,6 +943,12 @@ As independent geometries, they can be visualized on top of each other, or they 
                 </td>
             </tr>
             <tr>
+                <th>Description</th>
+                <td>
+                    Indicates a parent-child relation between two features that share any portion of space (geometrical intersection). The child has this relation with at least one other parent. 
+                </td>
+            </tr>             
+            <tr>
                 <th>Super-properties</th>
                 <td>
                     <a href="http://www.w3.org/2004/02/skos/core#narrower">skos:narrower</a>
@@ -968,12 +996,12 @@ As independent geometries, they can be visualized on top of each other, or they 
             </tr>
         </table>
     </div>
-    <div class="entity property" id="Rises">
-        <h3>Rises<sup title="object property" class="sup-op">op</sup></h3>
+    <div class="entity property" id="Risesin">
+        <h3>Rises in<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
-                <td><code>http://marineregions.org/ns/ontology#rises</code></td>
+                <td><code>http://marineregions.org/ns/ontology#risesIn</code></td>
             </tr>
             <tr>
                 <th>Is Defined By</th>
@@ -995,12 +1023,12 @@ As independent geometries, they can be visualized on top of each other, or they 
             </tr>
         </table>
     </div>
-    <div class="entity property" id="Streamsthrough">
-        <h3>Streams through<sup title="object property" class="sup-op">op</sup></h3>
+    <div class="entity property" id="Flowsthrough">
+        <h3>Flows through<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
-                <td><code>http://marineregions.org/ns/ontology#streamsThrough</code></td>
+                <td><code>http://marineregions.org/ns/ontology#flowsThrough</code></td>
             </tr>
             <tr>
                 <th>Is Defined By</th>
@@ -1017,7 +1045,7 @@ As independent geometries, they can be visualized on top of each other, or they 
             <tr>
                 <th>Inverse properties</th>
                 <td>
-                    <a href="#Containsstream">mr:containsStream</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="#Containswatercourse">mr:containsWatercourse</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
         </table>
