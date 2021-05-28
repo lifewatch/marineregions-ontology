@@ -133,6 +133,7 @@ mr:isRelatedTo
 mr:isPartOf
   a                     owl:ObjectProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
+  rdfs:comment          "Indicates a child-parent relation between two features that (a) share any portion of space (geometrical intersection), or (b) have a child-parent relation on a conceptual level (e.g. the Belgian Exclusive Economic Zone is part of Belgium, even though there is no geometrical intersection)."@en ;
   rdfs:label            "Is part of"@en ;
   rdfs:subPropertyOf    skos:broader, mr:isRelatedTo ;
   owl:inverseof         mr:contains .
@@ -140,6 +141,7 @@ mr:isPartOf
 mr:contains
   a                     owl:ObjectProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
+  rdfs:comment          "Indicates a parent-child relation between two features that (a) share any portion of space (geometrical intersection), or (b) have a parent-child relation on a conceptual level (e.g. Belgium contains the Belgian Exclusive Economic Zone, even though there is no geometrical intersection)."@en ;
   rdfs:label            "Contains"@en ;
   rdfs:subPropertyOf    skos:narrower, mr:isRelatedTo ;
   owl:inverseOf         mr:isPartOf .
@@ -161,6 +163,7 @@ mr:hasAdministrativePart
 mr:isPartlyPartOf
   a                     owl:ObjectProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
+  rdfs:comment          "Indicates a child-parent relation between two features that share any portion of space (geometrical intersection). The child has this relation with at least one other parent."@en ;
   rdfs:label            "Is partly part of"@en ;
   rdfs:subPropertyOf    skos:broader, mr:isRelatedTo ;
   owl:inverseOf         mr:partlyContains .
@@ -168,6 +171,7 @@ mr:isPartlyPartOf
 mr:partlyContains
   a                     owl:ObjectProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
+  rdfs:comment          "Indicates a parent-child relation between two features that share any portion of space (geometrical intersection). The child has this relation with at least one other parent."@en ;
   rdfs:label            "Partly contains"@en ;
   rdfs:subPropertyOf    skos:narrower, mr:isRelatedTo ;
   owl:inverseOf         mr:isPartlyPartOf .
@@ -186,10 +190,11 @@ mr:hasTributary
   rdfs:subPropertyOf    mr:isRelatedTo ;
   owl:inverseOf         mr:flowsInto .
 
-mr:rises
+mr:risesIn
   a                     owl:ObjectProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
-  rdfs:label            "Rises"@en ;
+  rdfs:comment          "Indicates that a body of water has its source in another GeoObject."@en ;
+  rdfs:label            "Rises in"@en ;
   rdfs:subPropertyOf    mr:isRelatedTo ;
   owl:inverseOf         mr:containsSourceOf .
 
@@ -198,21 +203,21 @@ mr:containsSourceOf
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
   rdfs:label            "Contains source of"@en ;
   rdfs:subPropertyOf    mr:isRelatedTo ;
-  owl:inverseOf         mr:rises .
+  owl:inverseOf         mr:risesIn .
 
-mr:streamsThrough
+mr:flowsThrough
   a                     owl:ObjectProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
-  rdfs:label            "Streams through"@en ;
+  rdfs:label            "Flows through"@en ;
   rdfs:subPropertyOf    mr:isRelatedTo ;
-  owl:inverseOf         mr:containsStream .
+  owl:inverseOf         mr:containsWatercourse .
 
-mr:containsStream
+mr:containsWatercourse
   a                     owl:ObjectProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
-  rdfs:label            "Contains stream"@en ;
+  rdfs:label            "Contains watercourse"@en ;
   rdfs:subPropertyOf    mr:isRelatedTo ;
-  owl:inverseOf         mr:streamsThrough .
+  owl:inverseOf         mr:flowsThrough .
 
 mr:isReplacedBy
   a                     owl:ObjectProperty ;
