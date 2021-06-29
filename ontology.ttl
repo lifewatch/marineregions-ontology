@@ -1,5 +1,5 @@
 @prefix mr: <http://marineregions.org/ns/ontology#> .
-@prefix mrtypes: <http://marineregions.org/ns/place_types#> .
+@prefix mrt: <http://marineregions.org/ns/placetypes#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix schema: <https://schema.org/> .
@@ -90,7 +90,7 @@ mr:MRGeoObject
   ], [
     a owl:Restriction ;
     owl:onProperty rdf:type ;
-    owl:someValuesFrom mrtypes:PlaceType
+    owl:someValuesFrom mrt:PlaceType
   ], [
     a owl:Restriction ;
     owl:onProperty rdfs:isDefinedBy ;
