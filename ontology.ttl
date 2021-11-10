@@ -1,7 +1,7 @@
 @prefix mr: <http://marineregions.org/ns/ontology#> .
 @prefix mrt: <http://marineregions.org/ns/placetypes#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix schema: <https://schema.org/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -17,11 +17,11 @@
   foaf:homepage         <https://marineregions.org/ontology/documentation.html> ;
   rdfs:label            "The Marine Regions Ontology"@en ;
   rdfs:comment          "The Marine Regions ontology provides definitions for the classes and properties used in the [Marine Regions](//marineregions.org) dataset."@en ;
-  dcterms:publisher     <https://www.vliz.be/> ;
-  dcterms:issued        "2021-03-12"^^xsd:date ;
-  dcterms:modified      "2021-03-17"^^xsd:date ;
-  dcterms:license       <https://creativecommons.org/licenses/by/4.0/> ;
-  dcterms:contributor                                                       
+  dc:publisher     <https://www.vliz.be/> ;
+  dc:issued        "2021-03-12"^^xsd:date ;
+  dc:modified      "2021-06-19"^^xsd:date ;
+  dc:license       <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:contributor                                                       
     [
         schema:name         "Harm Delva" ;
         schema:identifier   <https://orcid.org/0000-0001-8272-0754> ;
@@ -29,6 +29,7 @@
         schema:affiliation  <https://idlab.technology/> ;
     ],                                                        
     [   schema:name         "Marc Portier" ;
+        schema:identifier   <https://orcid.org/0000-0002-9648-6484> ;
         schema:email        <mailto:marc.portier@vliz.be> ;
         schema:affiliation  <https://www.vliz.be/> ;
     ] ,                                                      
@@ -38,6 +39,7 @@
         schema:affiliation  <https://www.vliz.be/> ;
     ] ,                                                      
     [   schema:name         "Bart Vanhoorne" ;
+        schema:identifier   <https://orcid.org/0000-0002-6642-4725> ;
         schema:email        <mailto:bart.vanhoorne@vliz.be> ;
         schema:affiliation  <https://www.vliz.be/> ;
     ] ,                                                      
@@ -50,7 +52,7 @@
         schema:email        <mailto:lennert.tyberghein@vliz.be> ;
         schema:affiliation  <https://www.vliz.be/> ;
     ] ;
-  dcterms:creator                                                       
+  dc:creator                                                       
     [
         schema:name         "Marine Regions Data Management team" ;
         schema:identifier   <https://www.marineregions.org/editors.php> ;
@@ -71,7 +73,7 @@ mr:Feature
   rdfs:isDefinedBy  <http://marineregions.org/ns/ontology> ;
   rdfs:comment      "A named spatial spatial region or location."@en ;
   rdfs:label        "Feature"@en ;
-  rdfs:subClassOf   dcterms:Location, skos:Concept  ;
+  rdfs:subClassOf   dc:Location, skos:Concept  ;
   rdfs:seeAlso      schema:Place .
 
 mr:MRGeoObject
@@ -101,7 +103,7 @@ mr:mrgid
   a                     owl:DatatypeProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
   rdfs:label            "Marine Regions Geographic Identifier (MRGID)"@en ;
-  rdfs:subPropertyOf    dcterms:identifier ;
+  rdfs:subPropertyOf    dc:identifier ;
   rdfs:domain           mr:Feature ;
   rdfs:range            xsd:nonNegativeInteger .
 
