@@ -15,11 +15,11 @@
 <http://marineregions.org/ns/ontology>
   a owl:Ontology ;
   foaf:homepage         <https://marineregions.org/ontology/documentation.html> ;
-  rdfs:label            "The Marine Regions Ontology"@en ;
-  rdfs:comment          "The Marine Regions ontology provides definitions for the classes and properties used in the [Marine Regions](//marineregions.org) dataset."@en ;
+  rdfs:label            "The Marine Regions Gazetteer Ontology"@en ;
+  rdfs:comment          "The Marine Regions Gazetteer ontology provides definitions for the classes and properties used in the [Marine Regions](//marineregions.org) gazetteer."@en ;
   dc:publisher     <https://www.vliz.be/> ;
   dc:issued        "2021-03-12"^^xsd:date ;
-  dc:modified      "2021-06-19"^^xsd:date ;
+  dc:modified      "2021-12-01"^^xsd:date ;
   dc:license       <https://creativecommons.org/licenses/by/4.0/> ;
   dc:contributor                                                       
     [
