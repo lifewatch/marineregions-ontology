@@ -2,7 +2,7 @@
 @prefix mrt: <http://marineregions.org/ns/placetypes#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix schema: <https://schema.org/> .
+@prefix schema: <http://schema.org/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -23,6 +23,7 @@
   dc:license       <https://creativecommons.org/licenses/by/4.0/> ;
   dc:contributor                                                       
     [
+        schema:name         "Harm Delva"@en ;
         schema:name         "Harm Delva" ;
         schema:identifier   <https://orcid.org/0000-0001-8272-0754> ;
         schema:email        <mailto:harm.delva@ugent.be> ;
@@ -66,6 +67,7 @@
   a schema:Organization ;
   schema:name   "Vlaams Instituut voor de Zee"@nl ;
   schema:name   "Flanders Marine Institute"@en ;
+  schema:name   "Flanders Marine Institute";
   schema:url    <https://www.vliz.be/> .
 
 mr:Feature
