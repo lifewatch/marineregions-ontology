@@ -23,7 +23,6 @@
   dc:license       <https://creativecommons.org/licenses/by/4.0/> ;
   dc:contributor                                                       
     [
-        schema:name         "Harm Delva"@en ;
         schema:name         "Harm Delva" ;
         schema:identifier   <https://orcid.org/0000-0001-8272-0754> ;
         schema:email        <mailto:harm.delva@ugent.be> ;
@@ -67,7 +66,6 @@
   a schema:Organization ;
   schema:name   "Vlaams Instituut voor de Zee"@nl ;
   schema:name   "Flanders Marine Institute"@en ;
-  schema:name   "Flanders Marine Institute";
   schema:url    <https://www.vliz.be/> .
 
 mr:Feature
