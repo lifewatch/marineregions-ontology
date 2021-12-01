@@ -33,6 +33,11 @@
         schema:email        <mailto:marc.portier@vliz.be> ;
         schema:affiliation  <https://www.vliz.be/> ;
     ] ,                                                      
+    [   schema:name         "Britt Lonneville" ;
+        schema:identifier   <https://orcid.org/0000-0002-5839-9005> ;
+        schema:email        <mailto:britee.lonneville@vliz.be> ;
+        schema:affiliation  <https://www.vliz.be/> ;
+    ] ,                                                      
     [   schema:name         "Laurian Van Maldeghem" ;
         schema:identifier   <https://orcid.org/0000-0003-0663-5907> ;
         schema:email        <mailto:laurian.van.maldeghem@vliz.be> ;
@@ -45,6 +50,11 @@
     ] ,                                                      
     [   schema:name         "Dias Bakeev" ;
         schema:email        <mailto:dias.bakeev@vliz.be> ;
+        schema:affiliation  <https://www.vliz.be/> ;
+    ] ,                                                      
+    [   schema:name         "Lennert Schepers" ;
+        schema:identifier   <https://orcid.org/0000-0002-6145-8248> ;
+        schema:email        <mailto:lennert.schepers@vliz.be> ;
         schema:affiliation  <https://www.vliz.be/> ;
     ] ,                                                      
     [   schema:name         "Lennert Tyberghein" ;
