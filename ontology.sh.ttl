@@ -1,0 +1,223 @@
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix mrt: <http://marineregions.org/ns/placetypes#> .
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+### Shape for mr:Feature class
+mr:FeatureShape a sh:NodeShape ;
+    sh:targetClass mr:Feature ;
+    sh:property [
+        sh:path mr:mrgid ;
+        sh:datatype xsd:nonNegativeInteger ;
+    ] ;
+    sh:property [
+        sh:path mr:hasGeometry ;
+        sh:class <http://www.opengis.net/ont/sf#Geometry> ;
+    ] ;
+    sh:property [
+        sh:path mr:inContextOf ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:isRelatedTo ;
+        sh:class mr:Feature ;
+    ] ;
+    ## following property paths are subproperties of mr:isRelatedTo ~ hence same shape constraints... (Q: does this NEED to be specified?)
+    sh:property [
+        sh:path mr:isPartOf ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:contains ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:isAdministrativePartOf ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:hasAdministrativePart ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:isPartlyPartOf ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:partlyContains ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:flowsInto ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:hasTributary ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:risesIn ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:containsSourceOf ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:flowsThrough ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:containsWatercourse ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:isReplacedBy ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:replaces ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:isInfluencedBy ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:influences ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:isAdjacentTo ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:isPreferredAlternativeOf ;
+        sh:class mr:Feature ;
+    ] ;
+    sh:property [
+        sh:path mr:hasPreferredAlternative ;
+        sh:class mr:Feature ;
+    ] ;
+.
+
+### Shape for mr:MRGeoObject class
+mr:MRGeoObjectShape a sh:NodeShape ;
+    sh:targetClass mr:MRGeoObject ;
+    sh:property [
+        sh:path mr:mrgid ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:class mrt:PlaceType ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:isDefinedBy ;
+        sh:hasValue <http://marineregions.org> ;
+    ] ;
+
+    ## mr:MRGeoObject is subclass of mr:Feature, hence same shapes apply 
+    #### (Q: does this need to be specified?)
+    #### (Q: if so, does class mr:MRGeoObject need to be specified?)
+    sh:property [
+        sh:path mr:hasGeometry ;
+        sh:class <http://www.opengis.net/ont/sf#Geometry> ;
+    ] ;
+    sh:property [
+        sh:path mr:inContextOf ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:isRelatedTo ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    ## following property paths are subproperties of mr:isRelatedTo ~ hence same shape constraints...
+    sh:property [
+        sh:path mr:isPartOf ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:contains ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:isAdministrativePartOf ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:hasAdministrativePart ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:isPartlyPartOf ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:partlyContains ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:flowsInto ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:hasTributary ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:risesIn ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:containsSourceOf ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:flowsThrough ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:containsWatercourse ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:isReplacedBy ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:replaces ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:isInfluencedBy ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:influences ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:isAdjacentTo ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:isPreferredAlternativeOf ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+    sh:property [
+        sh:path mr:hasPreferredAlternative ;
+        sh:class mr:MRGeoObject ;
+    ] ;
+.
