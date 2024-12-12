@@ -9,6 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 
+@base <http://marineregions.org/ns/shape#> . 
 
 <#FeatureShape>
   a sh:NodeShape ;
