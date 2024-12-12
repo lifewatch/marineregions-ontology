@@ -10,6 +10,44 @@
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 
 
+<#FeatureShape>
+  a sh:NodeShape ;
+  sh:targetClass mr:MRGeoObject ;
+
+  sh:property [
+    sh:path mr:mrgid ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:severity sh:Info ;
+    sh:message "A Feature may have an MRGID (mr:mrgid) as a non-negative integer." ;
+  ] ;
+  sh:property [
+    sh:path mr:hasGeometry ;
+    sh:nodeKind sh:IRI ;
+    sh:class <http://www.opengis.net/ont/sf#Geometry> ;
+    sh:severity sh:Info ;
+    sh:message "A Feature may have a Geometry (<http://www.opengis.net/ont/sf#Geometry>)." ;
+  ] ;
+  sh:property [
+    sh:path mr:inContextOf ;
+    sh:nodeKind sh:IRI ;   #**
+    sh:severity sh:Info ;
+    sh:message "A Feature may have a context (skos:scopeNote)." ;
+  ] ;
+  sh:property [
+    sh:path mr:isRelatedTo ;
+    sh:nodeKind sh:IRI ;
+    sh:class mr:Feature ;
+    sh:severity sh:Info ;
+    sh:message "A Feature may refer to another semantically related Feature (mr:isRelatedTo), which must be of type mr:Feature." ;
+  ] ;
+.
+
+# **confusion: 
+# mr:inContextOf defined as ObjectProperty, is subclass of skos:conceptNote which is also defined as ObjectProperty with rdfs:Resource as range;
+# this means the value of the property can be a resource, which might include literals or other resources like documents
+# so, specifying sh:nodeKind as sh:IRI seems both incomplete & wrong...
+
+
 <#MRGeoObjectShape>
   a sh:NodeShape ;
   sh:targetClass mr:MRGeoObject ;
@@ -49,7 +87,7 @@
 
   sh:property [
     sh:path mr:inContextOf ;
-    sh:nodeKind sh:IRI ;                  #see Feature-shape.ttl for confusion issue..
+    sh:nodeKind sh:IRI ;
     sh:severity sh:Info ;
     sh:message "A Feature may have a context (skos:scopeNote)." ;
   ] ;
