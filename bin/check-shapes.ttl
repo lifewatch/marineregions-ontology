@@ -9,24 +9,24 @@ shapes=${1:-$DEFAULT_SHAPES}
 
 # check if shapes file is available, exit if not
 if [ ! -f "$shapes" ]; then
-  echo "Shapes file not found: $shapes"
-  exit 1
+    echo "Shapes file not found: $shapes"
+    exit 1
 fi
 
 # check if ttl is available and use it fot ttl syntax check
 # else warn and skip to next
 ttl=$(which ttl)
 if [ -z "$ttl" ] || [ ! -x "$ttl" ]; then
-  echo "ttl not found or not executable, skipping ttl syntax check"
+    echo "ttl not found or not executable, skipping ttl syntax check"
 else
-  echo "Checking ttl syntax"
-  $ttl "$shapes"
+    echo "Checking ttl syntax"
+    $ttl "$shapes"
 fi
 
 # check if .venv is available, and make it if not
 if [ ! -d ".venv" ]; then
-  echo "Creating .venv"
-  python3 -m venv .venv
+    echo "Creating .venv"
+    python3 -m venv .venv
 fi
 
 # activate the .venv and continue there 
@@ -34,19 +34,25 @@ source .venv/bin/activate
 
 # install pyshacl in .venv if not already there
 if [ -z "$(pip show pyshacl)" ]; then
-  echo "Installing pyshacl"
-  pip install pyshacl
+    echo "Installing pyshacl"
+    pip install pyshacl
 fi
 
 # download shacl-shacl ttl to tempfile in .venv/.cache/shacl-shacl.ttl if not already there
 # you can get it from https://raw.githubusercontent.com/RDFLib/pySHACL/refs/heads/master/test/resources/sht_tests/core/complex/shacl-shacl-data-shapes.ttl
 # NOTE: quite a (possibly needless) hack 
-#  - this file is probably inside pyshacl package itself
-#  - and pyshacl probably has a way to use it via cli switches ...
+#  - as pyshacl probably has a way to use this via cli switches ...
 if [ ! -f ".venv/.cache/shacl-shacl.ttl" ]; then
-  echo "Downloading shacl-shacl.ttl"
-  mkdir -p .venv/.cache
-  curl -s -o .venv/.cache/shacl-shacl.ttl https://raw.githubusercontent.com/RDFLib/pySHACL/refs/heads/master/test/resources/sht_tests/core/complex/shacl-shacl-data-shapes.ttl
+    mkdir -p .venv/.cache
+    # try symlinking it from pyshacl itself at .venv/lib/python3.12/site-packages/pyshacl/assets/shacl-shacl.ttl
+    if [ -f ".venv/lib/python3.12/site-packages/pyshacl/assets/shacl-shacl.ttl" ]; then
+        echo "Symlinking shacl-shacl.ttl"
+        ln -s .venv/lib/python3.12/site-packages/pyshacl/assets/shacl-shacl.ttl .venv/.cache/shacl-shacl.ttl
+    else
+        # else download it
+        echo "Downloading shacl-shacl.ttl"
+        curl -s -o .venv/.cache/shacl-shacl.ttl https://raw.githubusercontent.com/RDFLib/pySHACL/refs/heads/master/test/resources/sht_tests/core/complex/shacl-shacl-data-shapes.ttl
+    fi
 fi
 
 # run pyshacl on shacl file itself using .venv/.cache/shacl-shacl.ttl
