@@ -40,6 +40,9 @@ fi
 
 # download shacl-shacl ttl to tempfile in .venv/.cache/shacl-shacl.ttl if not already there
 # you can get it from https://raw.githubusercontent.com/RDFLib/pySHACL/refs/heads/master/test/resources/sht_tests/core/complex/shacl-shacl-data-shapes.ttl
+# NOTE: quite a (possibly needless) hack 
+#  - this file is probably inside pyshacl package itself
+#  - and pyshacl probably has a way to use it via cli switches ...
 if [ ! -f ".venv/.cache/shacl-shacl.ttl" ]; then
   echo "Downloading shacl-shacl.ttl"
   mkdir -p .venv/.cache
