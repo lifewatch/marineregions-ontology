@@ -8,6 +8,8 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
 @base <http://marineregions.org/ns/shape#> . 
 
@@ -77,7 +79,7 @@
   sh:property [
     sh:path rdfs:isDefinedBy ;
     sh:hasValue <http://marineregions.org> ;
-  ] .
+  ] ;
 
   sh:property [
     sh:path mr:hasGeometry ;
