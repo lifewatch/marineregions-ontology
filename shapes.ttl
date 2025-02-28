@@ -259,9 +259,8 @@
   sh:property [
     sh:path dcat:centroid ;
     sh:datatype gsp:wktLiteral ;
-    sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "A geo-object must have a centroid defined as a WKT literal (dcat:centroid)." ;
+    sh:message "A geo-object may have one centroid defined as a WKT literal (dcat:centroid)." ;
   ] ;
 
   sh:property [
