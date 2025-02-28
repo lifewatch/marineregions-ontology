@@ -96,10 +96,136 @@
   ] ;
 
   sh:property [
-    sh:path mr:isRelatedTo, mr:isPartOf, mr:contains, mr:isAdministrativePartOf, mr:hasAdministrativePart, mr:isPartlyPartOf, mr:partlyContains, mr:flowsInto, mr:hasTributary, mr:risesIn, mr:containsSourceOf, mr:flowsThrough, mr:containsWatercourse, mr:isReplacedBy, mr:replaces, mr:isInfluencedBy, mr:influences, mr:isAdjacentTo, mr:isPreferredAlternativeOf, mr:hasPreferredAlternative ;
+    sh:path mr:isRelatedTo;
     sh:nodeKind sh:IRI ;
     sh:severity sh:Info ;
     sh:message "A geo-object may reference one or more related entities using mr:isRelatedTo or one of its subclasses." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:isPartOf;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:isPartOf." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:contains;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:contains." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:isAdministrativePartOf;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:isAdministrativePartOf." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:isPartlyPartOf;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:isPartlyPartOf." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:partlyContains;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:partlyContains." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:flowsInto;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:flowsInto." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:hasTributary;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:hasTributary." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:risesIn;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:risesIn." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:containsSourceOf;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:containsSourceOf." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:flowsThrough;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:flowsThrough." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:containsWatercourse;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:containsWatercourse." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:isReplacedBy;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:isReplacedBy." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:replaces;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:replaces." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:isInfluencedBy;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:isInfluencedBy." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:influences;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:influences." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:isAdjacentTo;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:isAdjacentTo." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:isPreferredAlternativeOf;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:isPreferredAlternativeOf." ;
+  ] ;
+
+  sh:property [
+    sh:path mr:hasPreferredAlternative ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:message "A geo-object may reference one or more related entities using mr:hasPreferredAlternative." ;
   ] ;
 
   sh:property [
