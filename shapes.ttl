@@ -231,9 +231,11 @@
 
   sh:property [
     sh:path prov:hadPrimarySource ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    sh:message "A geo-object must have a primary source defined with prov:hadPrimarySource." ;
+    sh:or (
+      [sh:nodeKind sh:IRI ; ]
+      [sh:nodeKind sh:BlankNode ; ]
+    ) ;
+    sh:message "A geo-object may have a primary source defined with prov:hadPrimarySource." ;
   ] ;
 
   sh:property [
