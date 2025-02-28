@@ -80,11 +80,6 @@
     ) ;
     sh:message "rdf:type must be either MRGeoObject or placetpye" ;
   ] ;
-  
-  sh:property [
-    sh:path rdfs:isDefinedBy ;
-    sh:hasValue <http://marineregions.org> ;
-  ] ;
 
   sh:property [
     sh:path mr:hasGeometry ;
