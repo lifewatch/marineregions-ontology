@@ -84,8 +84,9 @@
   sh:property [
     sh:path mr:hasGeometry ;
     sh:nodeKind sh:IRI ;
-    sh:class <http://www.opengis.net/ont/sf#Geometry> ;
-    sh:message "A geo-object may reference a geometry using mr:hasGeometry." ;
+    #sh:class <http://www.opengis.net/ont/sf#Geometry> ;                               # Geometries are missing rdf:type (e.g. https://marineregions.org/mrgid/4332/geometries.ttl?source=25&attributeValue=49 )
+    sh:pattern "^http://marineregions.org/mrgid/[0-9]+(?:\\?t=[0-9]+)?/geometries(?:\\?.*)?$" ;
+    sh:message "The IRI must follow the pattern 'http://marineregions.org/mrgid/{ID}[?t=timestamp]/geometries[?queryParams]' where {ID} is numeric, and optional timestamp and query parameters are allowed." ;
   ] ;
 
   sh:property [
