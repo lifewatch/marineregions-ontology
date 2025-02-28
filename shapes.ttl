@@ -73,13 +73,12 @@
 
   sh:property [
     sh:path rdf:type ;
-    sh:class skos:Concept ;  # Ensures the value is a SKOS Concept
-    sh:node [
-        sh:property [
-            sh:path skos:inScheme ;
-            sh:hasValue <http://marineregions.org/ns/placetypes> ;  # Ensures it belongs to the placetypes ConceptScheme
-        ] ;
-    ] ;
+    sh:nodeKind sh:IRI ;  # Ensures rdf:type is an IRI, not a literal
+    sh:or (
+        [ sh:pattern "^http://marineregions.org/ns/ontology#.*$" ]  # Matches "mr:"
+        [ sh:pattern "^http://marineregions.org/ns/placetypes#.*$" ] # Matches "mrt:"
+    ) ;
+    sh:message "rdf:type must be either MRGeoObject or placetpye" ;
   ] ;
   
   sh:property [
