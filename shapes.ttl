@@ -67,7 +67,7 @@
     sh:path skos:prefLabel ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
-    sh:severity sh:Info ;                                                                   # https://www.w3.org/TR/shacl/#results-severity
+    sh:severity sh:Violation ;                                                                   # https://www.w3.org/TR/shacl/#results-severity
     sh:message "A geo-object must have at least one preferred label (skos:prefLabel)." ;
   ] ;
 
@@ -250,7 +250,6 @@
   sh:property [
     sh:path skos:altLabel ;
     sh:datatype xsd:string ;
-    sh:minCount 0 ;
     sh:severity sh:Info ;
     sh:message "A geo-object may have alternate labels (skos:altLabel)." ;
   ] ;
@@ -260,6 +259,7 @@
     sh:path dcat:centroid ;
     sh:datatype gsp:wktLiteral ;
     sh:maxCount 1 ;
+    sh:severity sh:Violation ;
     sh:message "A geo-object may have one centroid defined as a WKT literal (dcat:centroid)." ;
   ] ;
 
@@ -268,6 +268,7 @@
     sh:datatype gsp:wktLiteral ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
+    sh:severity sh:Violation ;
     sh:message "A geo-object may have a bounding box defined as a WKT literal (dcat:bbox)." ;
   ] ;
 
@@ -277,6 +278,7 @@
     sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
+    sh:severity sh:Violation ;
     sh:message "A geo-object may include a hydra:next link for pagination." ;
   ] .
 
