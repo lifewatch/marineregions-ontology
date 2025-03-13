@@ -66,9 +66,8 @@
   sh:property [
     sh:path skos:prefLabel ;
     sh:datatype xsd:string ;
-    sh:minCount 1 ;
     sh:severity sh:Violation ;                                                                   # https://www.w3.org/TR/shacl/#results-severity
-    sh:message "A geo-object must have at least one preferred label (skos:prefLabel)." ;
+    sh:message "A geo-object may have a preferred label (skos:prefLabel)." ;
   ] ;
 
   sh:property [
