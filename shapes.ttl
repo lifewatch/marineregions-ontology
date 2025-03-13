@@ -27,6 +27,7 @@
     sh:path mr:hasGeometry ;
     sh:nodeKind sh:IRI ;
     sh:class <http://www.opengis.net/ont/sf#Geometry> ;
+    sh:minCount 0 ;
     sh:severity sh:Info ;
     sh:message "A Feature may have a Geometry (<http://www.opengis.net/ont/sf#Geometry>)." ;
   ] ;
@@ -66,7 +67,8 @@
   sh:property [
     sh:path skos:prefLabel ;
     sh:datatype xsd:string ;
-    sh:severity sh:Violation ;                                                                   # https://www.w3.org/TR/shacl/#results-severity
+    sh:minCount 0 ;
+    sh:severity sh:Info ;
     sh:message "A geo-object may have a preferred label (skos:prefLabel)." ;
   ] ;
 
@@ -98,6 +100,7 @@
   sh:property [
     sh:path mr:isRelatedTo;
     sh:nodeKind sh:IRI ;
+    sh:minCount 0 ;
     sh:severity sh:Info ;
     sh:message "A geo-object may reference one or more related entities using mr:isRelatedTo or one of its subclasses." ;
   ] ;
@@ -249,6 +252,7 @@
   sh:property [
     sh:path skos:altLabel ;
     sh:datatype xsd:string ;
+    sh:minCount 0 ;
     sh:severity sh:Info ;
     sh:message "A geo-object may have alternate labels (skos:altLabel)." ;
   ] ;
@@ -257,6 +261,7 @@
   sh:property [
     sh:path dcat:centroid ;
     sh:datatype gsp:wktLiteral ;
+    sh:minCount 0 ;
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
     sh:message "A geo-object may have one centroid defined as a WKT literal (dcat:centroid)." ;
@@ -271,7 +276,6 @@
     sh:message "A geo-object may have a bounding box defined as a WKT literal (dcat:bbox)." ;
   ] ;
 
-
   sh:property [
     sh:path hydra:next ;
     sh:nodeKind sh:IRI ;
@@ -279,7 +283,40 @@
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
     sh:message "A geo-object may include a hydra:next link for pagination." ;
-  ] .
+  ] ;
+
+  # non-constraining properties
+  sh:property [
+    sh:path dc:isVersionOf ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+
+  sh:property [ sh:path skos:note ], [ sh:path skos:historyNote ], [ sh:path mr:contains ], [ sh:path mr:containsSourceOf ], [ sh:path mr:containsWatercourse ], [ sh:path mr:flowsInto ], [ sh:path mr:flowsThrough ], [ sh:path mr:hasPreferredAlternative ], [ sh:path mr:hasTributary ], [ sh:path mr:influences ], [ sh:path mr:isAdjacentTo ], [ sh:path mr:isAdministrativePartOf ], [ sh:path mr:isInfluencedBy ], [ sh:path mr:isPartOf ], [ sh:path mr:isPartlyPartOf ], [ sh:path mr:isPreferredAlternativeOf ], [ sh:path mr:isReplacedBy ], [ sh:path mr:partlyContains ], [ sh:path mr:replaces ], [ sh:path mr:risesIn ]; 
+
+  sh:property [
+      sh:minCount 0 ;
+      sh:node [
+        a sh:NodeShape ;
+        sh:nodeKind sh:IRI ;
+        sh:property [
+          sh:class schema:PropertyValue ;
+          sh:maxCount 1 ;
+          sh:minCount 1 ;
+          sh:path schema:identifier
+        ], [
+          sh:maxCount 1 ;
+          sh:minCount 1 ;
+          sh:nodeKind sh:IRI ;
+          sh:path schema:url
+        ]
+      ] ;
+      sh:path skos:exactMatch
+      sh:severity sh:Warning ;
+    ] ; 
+
+  sh:property [
+
+.
 
 
 
