@@ -1,7 +1,7 @@
 @prefix mr: <http://marineregions.org/ns/ontology#> .
 @prefix mrt: <http://marineregions.org/ns/placetypes#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix schema: <http://schema.org/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -17,11 +17,11 @@
   foaf:homepage         <https://marineregions.org/ontology/documentation.html> ;
   rdfs:label            "The Marine Regions Gazetteer Ontology"@en ;
   rdfs:comment          "The Marine Regions Gazetteer ontology provides definitions for the classes and properties used in the [Marine Regions](//marineregions.org) gazetteer."@en ;
-  dc:publisher     <https://www.vliz.be/> ;
-  dc:issued        "2021-03-12"^^xsd:date ;
-  dc:modified      "2021-12-01"^^xsd:date ;
-  dc:license       <https://creativecommons.org/licenses/by/4.0/> ;
-  dc:contributor                                                       
+  dct:publisher     <https://www.vliz.be/> ;
+  dct:issued        "2021-03-12"^^xsd:date ;
+  dct:modified      "2021-12-01"^^xsd:date ;
+  dct:license       <https://creativecommons.org/licenses/by/4.0/> ;
+  dct:contributor                                                       
     [
         schema:name         "Harm Delva" ;
         schema:identifier   <https://orcid.org/0000-0001-8272-0754> ;
@@ -62,7 +62,7 @@
         schema:email        <mailto:lennert.tyberghein@vliz.be> ;
         schema:affiliation  <https://www.vliz.be/> ;
     ] ;
-  dc:creator                                                       
+  dct:creator                                                       
     [
         schema:name         "Marine Regions Data Management team" ;
         schema:identifier   <https://www.marineregions.org/editors.php> ;
@@ -83,7 +83,7 @@ mr:Feature
   rdfs:isDefinedBy  <http://marineregions.org/ns/ontology> ;
   rdfs:comment      "A named spatial spatial region or location."@en ;
   rdfs:label        "Feature"@en ;
-  rdfs:subClassOf   dc:Location, skos:Concept  ;
+  rdfs:subClassOf   dct:Location, skos:Concept  ;
   rdfs:seeAlso      schema:Place .
 
 mr:MRGeoObject
@@ -113,7 +113,7 @@ mr:mrgid
   a                     owl:DatatypeProperty ;
   rdfs:isDefinedBy      <http://marineregions.org/ns/ontology> ;
   rdfs:label            "Marine Regions Geographic Identifier (MRGID)"@en ;
-  rdfs:subPropertyOf    dc:identifier ;
+  rdfs:subPropertyOf    dct:identifier ;
   rdfs:domain           mr:Feature ;
   rdfs:range            xsd:nonNegativeInteger .
 
